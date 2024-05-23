@@ -7,7 +7,7 @@ const tick = (balls: Ball[], currentTime: number, lastTime: number) => {
         ctx?.clearRect(0, 0, canvas.width, canvas.height);
 
         balls.forEach(ball => {
-            ball.update(deltaTime);
+            ball.update();
             ball.draw(ctx!);
         });
 
