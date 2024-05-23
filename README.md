@@ -2,6 +2,16 @@
 
 This is a web application created using html5 canvas, where users can click on the screen to spawn a circle. This circle realistically obeys Earth-like gravity, moving vertically and bouncing upon hitting the bottom of the screen, with a dampening effect on each bounce until it comes to a stop.
 
+The user can
+1. control the gravity
+2. reset (clear all balls),
+3. make a small ball instead of the ball if it becomes too large
+
+The Balls get merged if they touch each other.
+There are other beautiful visual and sound effects added. 
+
+enjoy!!
+
 ## Getting Started
 
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
