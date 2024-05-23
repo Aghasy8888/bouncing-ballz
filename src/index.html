@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ballz</title>
+    
+</head>
+<body>
+    <div class="instructions">Click to drop balls!</div>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <audio id="bounceSound" src="/assets/bounceSound.wav" preload="auto"></audio>
+    <audio id="spawnSound" src="/assets/spawnSound.wav" preload="auto"></audio>
+    <audio id="backgroundMusic" src="/assets/backgroundMusic.mp3" loop preload="auto"></audio>
+
+    <div class="controls">
+        <label class="label" for="gravitySlider">Gravity: </label>
+        <input type="range" id="gravitySlider" min="0" max="0.8" step="0.1" value="0.5">
+    </div>
+
+    <button class="clearBallsButton" id="clearBallsButton">Clear Balls</button>
+
+</body>
+</html>
