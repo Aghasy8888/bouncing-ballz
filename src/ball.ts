@@ -1,5 +1,5 @@
 import colors from "./data/colors";
-import { draw, isClicked, update } from "./helpers/ballFunctions";
+import { draw, isClicked, updateBall } from "./helpers/ballFunctions";
 
 export const canvas = document.getElementById('canvas') as HTMLCanvasElement;
 export const ctx = canvas.getContext('2d');
@@ -34,21 +34,42 @@ export default class Ball {
         return colors[Math.floor(Math.random() * colors.length)];
     }
 
-    public update(): void {
-        const ballData = {
-        tail: this.tail ,
-        color: this.color,
-        border: this.border,
-        backgroundColor: this.backgroundColor,
-        tailLength: this.tailLength,
-        getRandomColor: this.getRandomColor,
-        }
-
-        update(this, canvas, gravitySlider, bounceSound, ballData);
+    update(): void {
+        updateBall(
+            this,
+            canvas,
+            gravitySlider,
+            bounceSound,
+            this.getRandomColor.bind(this)  
+        );
     }
 
     public draw(ctx: CanvasRenderingContext2D): void {
         draw(this, ctx);
     } 
+
+     public getTail(): { x: number; y: number }[] {
+        return this.tail;
+    }
+
+    public getTailLength(): number {
+        return this.tailLength;
+    }
+
+    public setTail(tail: { x: number; y: number }[]): void {
+        this.tail = tail;
+    }
+
+    public setColor(color: string): void {
+        this.color = color;
+    }
+
+    public setBorder(border: string): void {
+        this.border = border;
+    }
+
+    public setBackgroundColor(backgroundColor: string): void {
+        this.backgroundColor = backgroundColor;
+    }
 }
 
